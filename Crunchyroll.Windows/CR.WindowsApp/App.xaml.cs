@@ -1,22 +1,9 @@
-﻿using Prism.Windows.Store.Unity;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+﻿using System;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Activation;
+using Microsoft.ApplicationInsights;
 using Prism.Mvvm;
+using Prism.Windows.Store.Unity;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
 
@@ -30,7 +17,7 @@ namespace CR.WindowsApp
         /// <summary>
         /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
         /// </summary>
-        public static Microsoft.ApplicationInsights.TelemetryClient TelemetryClient;
+        public static TelemetryClient TelemetryClient;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -38,15 +25,15 @@ namespace CR.WindowsApp
         /// </summary>
         public App()
         {
-            TelemetryClient = new Microsoft.ApplicationInsights.TelemetryClient();
+            TelemetryClient = new TelemetryClient();
       
             this.InitializeComponent();
 
-            ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver((Type type) =>
+            ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver(type =>
             {
                 var name = type.Name;
-                var viewModelName = name.EndsWith("View") ? name.Substring(0, name.LastIndexOf("View")) : name;
-                var viewModelTypeName = String.Format("CR.Logic.ViewModels.{0}ViewModel, CR.Logic", viewModelName);
+                var viewModelName = name.EndsWith("View") ? name.Substring(0, name.LastIndexOf("View", StringComparison.OrdinalIgnoreCase)) : name;
+                var viewModelTypeName = string.Format("CR.Logic.ViewModels.{0}ViewModel, CR.Logic", viewModelName);
                 var viewModelType = Type.GetType(viewModelTypeName);
                return viewModelType;
             });
@@ -54,9 +41,9 @@ namespace CR.WindowsApp
 
         protected override async Task OnInitializeAsync(IActivatedEventArgs args)
         {
-            await base.OnInitializeAsync(args);
-          
+            await base.OnInitializeAsync(args);  
         }
+
         protected override Task OnLaunchApplicationAsync(LaunchActivatedEventArgs args)
         {
             NavigationService.Navigate("Main", null);

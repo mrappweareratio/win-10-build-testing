@@ -168,9 +168,9 @@
       <Project>{fb48bf82-b3e8-41b9-bcf0-3fb35c410768}</Project>
       <Name>Prism.Windows.Store.Unity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\PrismLibrary\Windows\Prism.Windows.Store\Prism.Windows.Store.csproj">
-      <Project>{c4bd55d0-9512-44f8-84a6-dc244c7d4ded}</Project>
-      <Name>Prism.Windows.Store</Name>
+    <ProjectReference Include="..\..\PrismLibrary\Windows\Prism.WindowsUniversal\Prism.Windows.Universal.csproj">
+      <Project>{989d2908-cede-4892-8eac-b317db5c7f58}</Project>
+      <Name>Prism.Windows.Universal</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\PrismLibrary\Windows\Prism.Windows\Prism.Windows.csproj">
       <Project>{95485773-463b-4c42-ade6-24285f049b9b}</Project>
