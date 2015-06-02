@@ -5,14 +5,14 @@
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   IgnorableNamespaces="uap mp">
 
-  <Identity Name="e30bd93e-ca96-44f8-9155-8029ba08bb5b"
+  <Identity Name="91dcd645-3e4b-4105-b814-0028ad4e74f2"
             Publisher="CN=mrapp"
             Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="e30bd93e-ca96-44f8-9155-8029ba08bb5b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="91dcd645-3e4b-4105-b814-0028ad4e74f2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>CR.Logic.Tests</DisplayName>
+    <DisplayName>Tests.CR.Logic</DisplayName>
     <PublisherDisplayName>mrapp</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -29,10 +29,10 @@
         Executable="vstest.executionengine.appcontainer.uap.exe"
         EntryPoint="Microsoft.VisualStudio.TestPlatform.TestExecutor.AppContainer.App">
       <uap:VisualElements
-        DisplayName="CR.Logic.Tests"
+        DisplayName="Tests.CR.Logic"
         Square150x150Logo="Assets\Logo.png"
         Square44x44Logo="Assets\SmallLogo.png"
-        Description="CR.Logic.Tests"
+        Description="Tests.CR.Logic"
         BackgroundColor="#464646">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>

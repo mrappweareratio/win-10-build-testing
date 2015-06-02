@@ -54,9 +54,8 @@ namespace Prism.Mvvm
             Type pageType = _navigationResolver(pageToken);
 
             if (pageType == null)
-            {
-                var resourceLoader = ResourceLoader.GetForCurrentView(PrismConstants.PrismInfrastructureResourceMapId);
-                var error = string.Format(CultureInfo.CurrentCulture, resourceLoader.GetString("FrameNavigationServiceUnableResolveMessage"), pageToken);
+            {                
+                var error = string.Format(CultureInfo.CurrentCulture, PrismConstants.FrameNavigationServiceUnableResolveMessage, pageToken);
                 throw new ArgumentException(error, "pageToken");
             }
 

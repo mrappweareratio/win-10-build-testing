@@ -19,6 +19,8 @@ using Prism.Mvvm.Interfaces;
 #if WINDOWS_PHONE_APP
  using Windows.Phone.UI.Input;
 #endif
+#if WINDOWS_UAP
+#endif
 
 namespace Prism.Mvvm
 {
@@ -91,10 +93,9 @@ namespace Prism.Mvvm
             var viewType = Type.GetType(viewFullName);
 
             if (viewType == null)
-            {
-                var resourceLoader = ResourceLoader.GetForCurrentView(PrismConstants.PrismInfrastructureResourceMapId);
+            {                
                 throw new ArgumentException(
-                    string.Format(CultureInfo.InvariantCulture, resourceLoader.GetString("DefaultPageTypeLookupErrorMessage"), pageToken, this.GetType().Namespace + ".Views"),
+                    string.Format(CultureInfo.InvariantCulture, PrismConstants.DefaultPageTypeLookupErrorMessage, pageToken, this.GetType().Namespace + ".Views"),
                     "pageToken");
             }
 

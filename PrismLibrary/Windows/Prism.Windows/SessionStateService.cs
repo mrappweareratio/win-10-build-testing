@@ -179,19 +179,17 @@ namespace Prism.Mvvm
         /// store navigation-related information.</param>
         public void RegisterFrame(IFrameFacade frame, String sessionStateKey)
         {
-            if (frame == null) throw new ArgumentNullException("frame");
-
-            var resourceLoader = ResourceLoader.GetForCurrentView(PrismConstants.PrismInfrastructureResourceMapId);
+            if (frame == null) throw new ArgumentNullException("frame");            
 
             if (frame.GetValue(FrameSessionStateKeyProperty) != null)
             {
-                var errorString = resourceLoader.GetString("FrameAlreadyRegisteredWithKey");
+                var errorString = PrismConstants.FrameAlreadyRegisteredWithKey;
                 throw new InvalidOperationException(errorString);
             }
 
             if (frame.GetValue(FrameSessionStateProperty) != null)
             {
-                var errorString = resourceLoader.GetString("FrameRegistrationRequirement");
+                var errorString = PrismConstants.FrameRegistrationRequirement;
                 throw new InvalidOperationException(errorString);
             }
 
@@ -288,7 +286,7 @@ namespace Prism.Mvvm
         /// Initializes a new instance of the <see cref="SessionStateServiceException"/> class.
         /// </summary>
         public SessionStateServiceException()
-            : base((ResourceLoader.GetForCurrentView(PrismConstants.PrismInfrastructureResourceMapId)).GetString("SessionStateServiceFailed"))
+            : base(PrismConstants.SessionStateServiceFailed)
         {
         }
 
@@ -305,7 +303,7 @@ namespace Prism.Mvvm
         /// </summary>
         /// <param name="exception">The exception.</param>
         public SessionStateServiceException(Exception exception)
-            : base((ResourceLoader.GetForCurrentView(PrismConstants.PrismInfrastructureResourceMapId)).GetString("SessionStateServiceFailed"), exception)
+            : base(PrismConstants.SessionStateServiceFailed, exception)
         {
         }
 

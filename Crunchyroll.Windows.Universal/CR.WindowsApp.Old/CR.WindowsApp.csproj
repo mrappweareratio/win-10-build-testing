@@ -176,8 +176,12 @@
       <Project>{95485773-463b-4c42-ade6-24285f049b9b}</Project>
       <Name>Prism.Windows</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CR.Core\CR.Core.csproj">
+      <Project>{8c2b681c-c536-4959-b916-1754951469d1}</Project>
+      <Name>CR.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CR.Logic\CR.Logic.csproj">
-      <Project>{5c82341d-f06b-4c81-8752-337309baaa5c}</Project>
+      <Project>{892c8912-7742-42a4-a5d7-808c4ec1ba1e}</Project>
       <Name>CR.Logic</Name>
     </ProjectReference>
   </ItemGroup>

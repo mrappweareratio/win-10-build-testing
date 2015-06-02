@@ -17,6 +17,6 @@ namespace Prism
         /// <summary>
         /// Notifies that the value for <see cref="IsActive"/> property has changed.
         /// </summary>
-        event EventHandler IsActiveChanged;
+        event EventHandler IsActiveChanged;        
     }
 }
