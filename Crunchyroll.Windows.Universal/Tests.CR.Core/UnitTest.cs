@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 
-namespace Tests.CR.Logic
+namespace Tests.CR.Core
 {
     [TestClass]
     public class UnitTest1

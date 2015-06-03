@@ -25,7 +25,7 @@ namespace CR.WinApp
             {
                 var name = type.Name;
                 var viewModelName = name.EndsWith("View") ? name.Substring(0, name.LastIndexOf("View", StringComparison.OrdinalIgnoreCase)) : name;
-                var viewModelTypeName = string.Format("CR.Logic.ViewModels.{0}ViewModel, CR.Logic", viewModelName);
+                var viewModelTypeName = $"CR.ViewModels.{viewModelName}ViewModel, CR.Core";
                 var viewModelType = Type.GetType(viewModelTypeName);
                return viewModelType;
             });
