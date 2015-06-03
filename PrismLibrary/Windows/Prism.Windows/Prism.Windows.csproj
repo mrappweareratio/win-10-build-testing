@@ -34,10 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <PRIResource Include="Strings\en-US\Resources.resw" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="AppManifestHelper.cs" />
     <Compile Include="FrameFacadeAdapter.cs" />
     <Compile Include="FrameNavigationService.cs" />
